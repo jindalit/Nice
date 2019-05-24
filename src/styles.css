@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700|Roboto+Slab:400,700');
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css";
+@import "https://use.fontawesome.com/releases/v5.8.2/css/all.css";
+/* included only when we don't want to use fonts from google server */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(./assets/fonts/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(./assets/fonts/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+
+body {
+  color:#393939;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans';
+  font-size: 13px;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+}
+@media (max-width: 800px) {
+  html {
+    font-size: 13px;
+  }
+  body{
+    font-size: 13px;
+  }
+}

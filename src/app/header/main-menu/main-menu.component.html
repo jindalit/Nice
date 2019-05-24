@@ -1,0 +1,87 @@
+<ul>
+  <li><a (click)="activate(1)" (mouseover)="activate(1)">All Products</a></li>
+  <li><a (click)="activate(2)" (mouseover)="activate(2)">How Its Work</a></li>
+  <li><a (click)="activate(3)" (mouseover)="activate(3)">Contact</a></li>
+
+</ul>
+
+<div *kitOverlay="displayMenu" kitPinPosition position="bottom" [anchor]="menuAnchor" [@menuHost]="true">
+  <div class="sub" [@fade]="true" (kitOutsideClick)="displayMenu = false" [skip]="menuAnchor">
+    <div class="main-wrapper">
+      <div *kitSlide="1" [@slide]="slideDirection | async" class="section">
+        <div>
+          <div class="title">
+            FRUITS
+          </div>
+          <ul>
+            <li><a routerLink="/products">Apple</a></li>
+            <li><a routerLink="/products">Mango</a></li>
+            <li><a routerLink="/products">Pomegranate</a></li>
+            <li><a routerLink="/products">Banana</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="title">
+            VEGETABLES
+          </div>
+          <ul>
+            <li><a routerLink="/products/1">Potato</a></li>
+            <li><a routerLink="/products">Tomamto</a></li>
+            <li><a routerLink="/products">Onion</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="title">
+            MENS ACCESSORIES
+          </div>
+          <ul>
+
+            <li><a routerLink="/products/1">Belt</a></li>
+            <li><a routerLink="/products">Watches</a></li>
+          </ul>
+        </div>
+      </div>
+      <div *kitSlide="2" [@slide]="slideDirection | async" class="section">
+        <div>
+          <div class="title">
+            REGISTRATION
+          </div>
+          <div class="title">
+            LOGIN
+          </div>
+          <div class="title">
+            CHANGE PASSWORD
+          </div>
+
+        </div>
+        <div>
+          <div class="title">
+            REGISTRATION
+          </div>
+          <div class="title">
+            LOGIN
+          </div>
+          <div class="title">
+            CHANGE PASSWORD
+          </div>
+
+        </div>
+        <div>
+          <div class="title">
+            REGISTRATION
+          </div>
+          <div class="title">
+            LOGIN
+          </div>
+          <div class="title">
+            CHANGE PASSWORD
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>

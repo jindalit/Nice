@@ -1,0 +1,16 @@
+{
+  "name": "nice eCommerce by ngx-kit",
+  "short_name": "nice",
+  "description": "eCommerce Angular demo based on ngx-kit",
+  "icons": [
+    {
+      "src": "assets/icons/nice-192.png",
+      "sizes": "192x192",
+      "type": "image\/png"
+    }
+  ],
+  "display": "standalone",
+  "start_url": "./?utm_source=web_app_manifest",
+  "background_color": "#3d4044",
+  "theme_color": "#3d4044"
+}

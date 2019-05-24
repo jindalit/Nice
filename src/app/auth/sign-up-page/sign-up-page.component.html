@@ -1,0 +1,51 @@
+<div class="main-wrapper">
+  <div class="login-panel">
+    <h2 class="title">Registration</h2>
+    <form>
+      <h3 class="heading">Personal Details</h3>
+      <div>
+        <label>User Type:</label>
+        <select [uiSelect] name="full-name">
+          <option>Farmer</option>
+          <option>Goverment Officer</option>
+          <option>Input Dealer</option>
+          <option>Scientist</option>
+          <option>Student</option>
+        </select>
+      </div>
+      <div>
+        <label>Full Name:</label>
+        <input [uiInput] name="full-name" autocomplete="off">
+      </div>
+      <div>
+          <label>Mobile Number:</label>
+          <input [uiInput] name="mobile" type="number" autocomplete="off">
+        </div>
+      <div>
+        <label>Email ID</label>
+        <input [uiInput] name="emailuser" type="email" autocomplete="off">
+      </div>
+      <h3 class="heading">Address Details</h3>
+      <div>
+        <label>State:</label>
+        <input [uiInput] name="state" autocomplete="off">
+      </div>
+      <div>
+          <label>District:</label>
+          <input [uiInput] name="state" autocomplete="off">
+        </div>
+        <div>
+            <label>Block:</label>
+            <input [uiInput] name="state" autocomplete="off">
+          </div>
+          <div>
+              <label>Village/Area:</label>
+              <input [uiInput] name="state" autocomplete="off">
+            </div>
+    </form>
+    <div class="login-box">
+      <button class="login">Continue</button>
+    </div>
+    
+  </div>
+</div>
