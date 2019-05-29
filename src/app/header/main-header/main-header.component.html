@@ -2,7 +2,46 @@
   <div class="main-wrapper">
     <div class="logo" routerLink="/">NICE</div>
     <div class="navigation">
-      <app-main-menu></app-main-menu>
+      <ul class="main-menu">
+        <li><a>All Products</a>
+          <ul class="section">
+            <li>
+
+              <div class="title">
+                PRODUCTS
+              </div>
+              <ul>
+                <li><a routerLink="/products/1">Coconut Board</a></li>
+                <li><a routerLink="/products">Rice</a></li>
+                <li><a routerLink="/products">Grains</a></li>
+                <li><a routerLink="/products">Pulses</a></li>
+              </ul>
+            </li>
+            <li>
+              <div class="title">
+                FRUITS
+              </div>
+              <ul>
+                <li><a routerLink="/products">Apple</a></li>
+                <li><a routerLink="/products">Mango</a></li>
+                <li><a routerLink="/products">Pomegranate</a></li>
+                <li><a routerLink="/products">Banana</a></li>
+              </ul>
+            </li>
+            <li>
+              <div class="title">
+                VEGETABLES
+              </div>
+              <ul>
+                <li><a routerLink="/products/1">Potato</a></li>
+                <li><a routerLink="/products">Tomamto</a></li>
+                <li><a routerLink="/products">Onion</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
     </div>
     <!-- <div class="search">
        <input type="text" placeholder="Search and add to shopping cart..." [(ngModel)]="inputModel"> 
@@ -10,6 +49,27 @@
         
       </button>
     </div> -->
-    
+    <div class="account">
+      <ul>
+
+        <li class="support"> <a routerLink="/support"> <i class="fas fa-headset"></i> Support</a></li>
+        <li> <a routerLink="/bag" class="shopping-badge"> <i class="fas fa-shopping-cart"></i><span
+              class="badge badge-dark">{{dataService.cartCount}}</span> cart</a></li>
+        <li>
+          <a routerLink="/auth/sign-in" class="sign-in">
+            <i class="fas fa-user-circle"></i> Hello, SME_NICE
+            <ul class="drop-down">
+              <li>I want to sell my product</li>
+              <li>Profile</li>
+              <li>Change Password</li>
+              <li>Logout</li>
+            </ul>
+          </a>
+        </li>
+
+      </ul>
+
+
+    </div>
   </div>
 </div>

@@ -8,16 +8,19 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100px;
-  height: 100px;
+  height: 70px;
+  
   a {
     text-align: center;
+    border: 1px solid;
     margin-right: 10px;
+    margin-bottom:2px;
     img {
-      height: 100px;
+      height:70px;
     }
     &.-active {
       box-shadow: 0 0 10px 5px rgba(245, 243, 243, 1);
-      border-radius: 6px;
+      
     }
   }
 }

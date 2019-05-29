@@ -4,82 +4,66 @@
       <ui-photo-carousel [photos]="product.photos"></ui-photo-carousel>
       <div>
         <h4>Description</h4>
-        <p> ‘Florence’ midi dress from premium Australian label, Bec & Bridge. Forming a fluid bodycon fit, the
-          sleeveless
-          dress is made from a mid-weight bonded crêpe with a hint of stretch and subtle darts at the bodice for a
-          contour-skimming silhouette. Slim satin shoulder straps feature with cross-over detailing to the rear and a
-          low back design. Falling to just below the knee with a straight hem. Lined.</p>
-        <p>95% Polyester, 5% Elastane</p>
-        <p>Made in Australia</p>
-        <p>Model is 173cm/5'8" and wears a size UK 8.</p>
+        <p> An important part of the Indian diet, Moong Dal is a good and filling option for those who want to shed
+          kilos. It is extremely light and easy to digest since it has minimal calories but is packed with protein.</p>
       </div>
       <div>
         <h4>Product Details</h4>
         <table cellspacing="0">
           <tbody>
-          <tr>
-            <th>
-              Brand:
-            </th>
-            <td>
-              Bec &amp; Bridge
-            </td>
-          </tr>
-          <tr>
-            <th>
-              Colour:
-            </th>
-            <td>
-              Blue
-            </td>
-          </tr>
-          <tr>
-            <th>
-              Material:
-            </th>
-            <td>
-              95% Polyester, 5% Elastane
-            </td>
-          </tr>
+            <tr>
+              <th>
+                Brand:
+              </th>
+              <td>
+                Tata
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Format:
+              </th>
+              <td>
+                Split
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Weight:
+              </th>
+              <td>
+                1000grams
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
     </div>
     <div class="product-info">
-      <div class="title"><h3>{{ product.title }}</h3></div>
-      <div class="sub-title">{{ product.description }}</div>
+      <div class="title">
+        <h3>{{ product.title }}</h3>
+      </div>
       <div class="price-box">
         <div class="price">
-          {{ product.price }}$
+          <p>M.R.P. <span class="old-price"><i class="fas fa-rupee-sign"></i> {{ product.price }}</span></p>
+          <p>Price <span class="new-price">{{ product.sale }} <i class="fas fa-rupee-sign"></i></span></p>
         </div>
         <div class="rating">
           <ui-rating [value]="3"></ui-rating>
         </div>
       </div>
-      <div class="color-box">
-        <p>Select color</p>
-        <button [uiButton] [type]="'color'" [kitCheck] [(ngModel)]="color" [value]="'1'"
-                [style.background]="'#ccc'"></button>
-        <button [uiButton] [type]="'color'" [kitCheck] [(ngModel)]="color" [value]="'2'"
-                [style.background]="'#000C48'"></button>
-        <button [uiButton] [type]="'color'" [kitCheck] [(ngModel)]="color" [value]="'3'"
-                [style.background]="'#883C73'"></button>
-      </div>
+      
       <div class="size-box">
-        <p>Select size</p>
-        <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'xs'">XS</button>
-        <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'s'">S</button>
-        <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'m'">M</button>
-        <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'l'">L</button>
-        <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'xl'">XL</button>
+        <p>Select quantity</p>
+        <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'250'">250 gm</button>
+        <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'500'">500 gm</button>
+        <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'1kg'">1 kg</button>
+        <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'5kg'">5 kg</button>
       </div>
-      <div class="quantity">
-        <ui-qt-input [ngModel]="4"></ui-qt-input>
-      </div>
-      <button class="add" [uiButton] [icon]="'cart'">Add to cart</button>
+      <button class="add" [uiButton] (click)="data.cartCount = data.cartCount + 1"> <i class="fas fa-cart-plus"> </i> Add to cart</button>
       <div>
         <h4>Delivery Information</h4>
-        <p>UK next day delivery available until 9pm plus over 160 countries shipped to worldwide.</p>
+        <p>Next day delivery available until 9pm.</p>
       </div>
       <div>
         <h4>Returns Policy</h4>

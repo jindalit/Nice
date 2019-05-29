@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListPageComponent } from './list-page/list-page.component';
 import { ViewPageComponent } from './view-page/view-page.component';
+import{UploadComponent} from './upload/upload.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: ':id',
     component: ViewPageComponent,
+  },
+  {
+    path: ':id/upload',
+    component: UploadComponent,
   },
 ];
 

@@ -8,6 +8,7 @@ import { CoreModule } from './core/core.module';
 import { DataService } from './data/data.service';
 import { FooterModule } from './footer/footer.module';
 import { HeaderModule } from './header/header.module';
+import { SupportModule } from './support/support.module';
 import { UiModule } from './ui/ui.module';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { UiModule } from './ui/ui.module';
     UiModule,
     HeaderModule,
     FooterModule,
+    SupportModule
   ],
   declarations: [
     AppComponent,

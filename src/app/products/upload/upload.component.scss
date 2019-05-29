@@ -1,0 +1,6 @@
+@import "params";
+@import "common";
+
+:host {
+  margin: $grid*2 0;
+}

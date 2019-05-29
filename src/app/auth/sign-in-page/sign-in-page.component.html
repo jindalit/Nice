@@ -1,7 +1,7 @@
 <div class="main-wrapper">
   <div class="container">
     <div class="login-panel">
-      <h2 class="title">Existing Customers</h2>
+      <h2 class="title">Please Enter Your Information</h2>
         <form>
           <label>Email address</label>
           <input [uiInput] name="email" [(ngModel)]="inputModel">
@@ -9,14 +9,14 @@
           <input type="password" [uiInput] name="password" [(ngModel)]="inputModel">
         </form>
         <div class="forgotten-password">
-          <a href="">Forgotten your password?</a>
+          <a href="javascript:void(0)">I forgot my password</a>
         </div>
         <div class="login-box">
-          <button class="login">Sign In</button>
+          <button class="login">LogIn</button>
         </div>
     </div>
     <div class="login-panel">
-      <h2 class="title">New to nice?</h2>
+      <h2 class="title">I want to register </h2>
       <div class="login-box">
         <button class="login" routerLink="../sign-up">Continue</button>
       </div>

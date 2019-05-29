@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DataService } from '../../data/data.service';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
   inputModel: any;
 
-  constructor() {
+  constructor(private data:DataService) {
   }
 
   ngOnInit() {

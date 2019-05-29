@@ -2,7 +2,7 @@
 @import "common";
 
 :host {
-  margin: $grid*6 0;
+  margin: $grid*2 0;
 }
 
 .container {
@@ -20,6 +20,7 @@
   margin: 0 $grid*3;
   padding: $grid*4;
   width: 50%;
+  background: #F7F7F7
 }
 
 .title {
@@ -37,14 +38,12 @@ label {
 
 input {
   margin-bottom: $grid*2.5;
+  background: #ffffff !important;
 }
 
 .forgotten-password {
   text-align: center;
-  a {
-    text-decoration: none;
-    color: $textColor;
-  }
+  
 }
 
 .login-box {

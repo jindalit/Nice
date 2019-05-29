@@ -11,7 +11,6 @@ import {
 } from '@ngx-kit/core';
 import { UiModule } from '../ui/ui.module';
 import { MainHeaderComponent } from './main-header/main-header.component';
-import { MainMenuComponent } from './main-menu/main-menu.component';
 
 @NgModule({
   imports: [
@@ -27,7 +26,6 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
   ],
   declarations: [
     MainHeaderComponent,
-    MainMenuComponent,
   ],
   exports: [
     MainHeaderComponent,

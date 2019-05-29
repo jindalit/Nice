@@ -9,7 +9,7 @@ import { ListPageComponent } from './list-page/list-page.component';
 import { ProductsRoutingModule } from './products-routing.module';
 import { SortComponent } from './sort/sort.component';
 import { ViewPageComponent } from './view-page/view-page.component';
-
+import{UploadComponent} from './upload/upload.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -21,6 +21,7 @@ import { ViewPageComponent } from './view-page/view-page.component';
     ListPageComponent,
     ViewPageComponent,
     FiltersComponent,
+    UploadComponent,
     SortComponent,
     CardComponent,
   ],

@@ -1,0 +1,36 @@
+@import "params";
+@import "common";
+
+:host {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 40px 0;
+}
+.enquiry-btn{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+.enquiry{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .box{      
+      border: 1px solid #d2d2d2;
+      min-width: 200px;
+      text-align: center;
+      margin: 0 20px;
+      border-radius: 4px;
+      padding: 20px 0;
+      i{
+        font-size: 8em;
+        display: block
+      }
+      span{
+        font-size:2em;
+        color: blueviolet
+      }
+    }
+}
