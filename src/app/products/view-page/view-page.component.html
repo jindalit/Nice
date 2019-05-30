@@ -4,8 +4,7 @@
       <ui-photo-carousel [photos]="product.photos"></ui-photo-carousel>
       <div>
         <h4>Description</h4>
-        <p> An important part of the Indian diet, Moong Dal is a good and filling option for those who want to shed
-          kilos. It is extremely light and easy to digest since it has minimal calories but is packed with protein.</p>
+        <p [innerHTML]="product.description"></p>
       </div>
       <div>
         <h4>Product Details</h4>

@@ -6,6 +6,7 @@ import { CardComponent } from './card/card.component';
 import { FiltersComponent } from './filters/filters.component';
 import { ListPageComponent } from './list-page/list-page.component';
 
+import {UploaderModule} from 'angular-upload-files'; 
 import { ProductsRoutingModule } from './products-routing.module';
 import { SortComponent } from './sort/sort.component';
 import { ViewPageComponent } from './view-page/view-page.component';
@@ -16,6 +17,7 @@ import{UploadComponent} from './upload/upload.component';
     FormsModule,
     ProductsRoutingModule,
     UiModule,
+    UploaderModule.forRoot()
   ],
   declarations: [
     ListPageComponent,

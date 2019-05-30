@@ -55,16 +55,16 @@
         <li class="support"> <a routerLink="/support"> <i class="fas fa-headset"></i> Support</a></li>
         <li> <a routerLink="/bag" class="shopping-badge"> <i class="fas fa-shopping-cart"></i><span
               class="badge badge-dark">{{dataService.cartCount}}</span> cart</a></li>
-        <li>
-          <a routerLink="/auth/sign-in" class="sign-in">
-            <i class="fas fa-user-circle"></i> Hello, SME_NICE
-            <ul class="drop-down">
-              <li>I want to sell my product</li>
-              <li>Profile</li>
-              <li>Change Password</li>
-              <li>Logout</li>
-            </ul>
-          </a>
+        <li class="sign-in">
+          <a routerLink="/auth/sign-in">
+            <i class="fas fa-user-circle"></i> Hello, SME_NICE</a>
+          <ul class="drop-down">
+            <li><a routerLink="products/1/upload">I want to sell my product</a></li>
+            <li>Profile</li>
+            <li>Change Password</li>
+            <li>Logout</li>
+          </ul>
+
         </li>
 
       </ul>

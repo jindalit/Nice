@@ -10,7 +10,6 @@ import { FooterModule } from './footer/footer.module';
 import { HeaderModule } from './header/header.module';
 import { SupportModule } from './support/support.module';
 import { UiModule } from './ui/ui.module';
-
 @NgModule({
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

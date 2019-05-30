@@ -1,1 +1,34 @@
-<div class="main-wrapper">upload</div>
+<div class="main-wrapper">
+  <h1>Add Product</h1>
+  <div class="upload">
+    <div>
+      <label>Product Name:</label>
+      <input [uiInput] name="productname" [(ngModel)]="inputModel">
+    </div>
+    <div>
+      <label>Product Description:</label>
+      <textarea [uiTextarea] name="productname" rows="4" [(ngModel)]="inputModel"></textarea>
+    </div>
+    <div>
+      <label>Product Images:</label>
+      <app-uploader (onFilesSelected)="readFiles($event)" (onUploadComplete)="uploadDone($event)"
+        [buttonText]="'Choose Images'" [buttonClass]="'btn btn-default'" [postUrl]="'https://api.imgur.com/3/image'"
+        [id]="0" [multiple]="true" [usingImages]="true" [showImagesOnAdd]="true" [imageWidth]="'100px'"
+        [imagesRemovable]="true" [imageRemoveType]="'clickOnX'" [uploadParams]="uploadParams"
+        [imageContainerDisplay]="'inline-block'"></app-uploader>
+
+
+    </div>
+    <div>
+      <label>Selling Price:</label>
+      <input [uiInput] type="number" name="productname" [(ngModel)]="inputModel">
+    </div>
+    <div>
+      <label>Available Quantity:</label>
+      <input [uiInput] type="number" name="productname" [(ngModel)]="inputModel">
+    </div>
+    <div class="add-btn">
+      <button uiButton class="btn btn-success">Add Product</button>
+    </div>
+  </div>
+</div>
