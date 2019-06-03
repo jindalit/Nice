@@ -6,8 +6,8 @@ export class DataService {
   public showAlertHandler = new Subject<any>();
   public cartCount: any = 0;
   bagProduct: any = [];
-  user:any;
-  total:any=0;
+  user: any;
+  total: any = 0;
   products: Product[] = [
     {
       id: 4,
@@ -203,13 +203,16 @@ export class DataService {
     }
   ];
   addToCart(id) {
-    this.cartCount = this.cartCount + 1
-    this.bagProduct.push(this.products.find(p => p.id === parseInt(id, 10)));
-    this.showAlert({
-      type: "warning", msg: "Added to cart."
-    });
+    if (!(event as any).target.classList.contains("disabled")) {
+      this.cartCount = this.cartCount + 1
+      this.bagProduct.push(this.products.find(p => p.id === parseInt(id, 10)));
+      this.showAlert({
+        type: "warning", msg: "Added to cart."
+      });
+      (event as any).target.classList.add("disabled");
+    }
   }
- 
+
   showAlert(option) {
     this.showAlertHandler.next(option);
   }

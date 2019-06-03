@@ -12,7 +12,7 @@
 
     .quantity-box {
         span {
-            padding:10px 15px;
+            padding: 10px 15px;
             margin-right: 10px;
         }
     }
@@ -51,9 +51,10 @@
         margin: 0 $grid;
         text-align: center;
         width: 35%;
-        a{
-          text-decoration: none;
-          color: inherit;
+
+        a {
+            text-decoration: none;
+            color: inherit;
         }
     }
 }
@@ -78,10 +79,12 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        margin:0;
-      P{
-        margin: 0px;
-      }
+        margin: 0;
+
+        P {
+            margin: 0px;
+        }
+
         .old-price {
             color: #7b7d8b;
             margin-right: 8px;
@@ -135,8 +138,21 @@ button {
     padding: $grid*1 $grid*2;
     text-transform: uppercase;
 
+    &.disabled {
+        background: #7b7d8b;
+
+        &:hover {
+            background: #7b7d8b;
+            ;
+            border-color: #7b7d8b;
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+            color: #000000;
+        }
+    }
+
     &:hover {
-        background: #449d44;;
+        background: #449d44;
+        ;
         border-color: #398439;
         box-shadow: 0 10px 30px rgba(79, 70, 228, 0.8);
         color: #ffffff;

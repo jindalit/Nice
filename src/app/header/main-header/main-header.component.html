@@ -60,7 +60,6 @@
             <i class="fas fa-user-circle"></i> Hello, {{dataService.user}}</a>
           <ul class="drop-down">
             <li *ngIf="dataService.user == 'SME_NICE'"><a routerLink="products/1/upload">I want to sell my product</a></li>
-            <li>Profile</li>
             <li>Change Password</li>
             <li (click)="logOut()">Logout</li>
           </ul>

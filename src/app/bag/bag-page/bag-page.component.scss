@@ -74,7 +74,7 @@
   text-align: right;
 }
 
-.checkout {
+.checkout,.shopping-btn {
   line-height: 3.7rem;
   padding: 0 $grid*3;
   background: $primaryColor;
@@ -83,6 +83,7 @@
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 400;
+  margin-left: 30px;
   &:hover{
     box-shadow: 0 5px 30px rgba(79, 70, 228, 0.8);
   }

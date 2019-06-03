@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import{DataService} from '../../data/data.service';
 @Component({
   selector: 'app-checkout-page',
   templateUrl: './checkout-page.component.html',
@@ -12,7 +12,7 @@ export class CheckoutPageComponent implements OnInit {
 
   selectModel: any;
 
-  constructor() {
+  constructor(private data:DataService) {
   }
 
   ngOnInit() {
