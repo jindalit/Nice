@@ -44,7 +44,7 @@
             10 pc
           </span>
         </div>
-        <button (click)="data.cartCount = data.cartCount + 1"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
+        <button (click)="data.addToCart('1')"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
       </div>
       <div class="product">
         <div class="wrapper">
@@ -63,7 +63,7 @@
             10 Kg
           </span>
         </div>
-        <button (click)="data.cartCount = data.cartCount + 1"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
+        <button (click)="data.addToCart('2')"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
       </div>
       <div class="product">
         <div class="wrapper">
@@ -82,11 +82,11 @@
             10 Kg
           </span>
         </div>
-        <button (click)="data.cartCount = data.cartCount + 1"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
+        <button (click)="data.addToCart('3')"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
       </div>
       <div class="product">
         <div class="wrapper">
-          <a routerLink="/products/1"><img src="../../../assets/others/pulses.jpg"></a></div>
+          <a routerLink="/products/4"><img src="../../../assets/others/pulses.jpg"></a></div>
         <div class="sub-title">Pulses</div>
         <div class="price-box">
           <p class="old-price">642 <i class="fas fa-rupee-sign"></i></p>
@@ -101,7 +101,7 @@
             10 Kg
           </span>
         </div>
-        <button (click)="data.cartCount = data.cartCount + 1"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
+        <button (click)="data.addToCart('4')"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
       </div>
     </div>
   </div>
@@ -120,7 +120,7 @@
     <div class="offers">
       <div class="product">
         <div class="wrapper">
-          <a routerLink="/products/1"> <img src="../../../assets/fruits/mango.jpg"></a>
+          <a routerLink="/products/5"> <img src="../../../assets/fruits/mango.jpg"></a>
         </div>
         <div class="sub-title">MANGO</div>
         <div class="price-box">
@@ -136,11 +136,11 @@
             1 kg
           </span>
         </div>
-        <button (click)="data.cartCount = data.cartCount + 1"> <i class="fas fa-cart-plus"></i> ADD TO CART</button>
+        <button (click)="data.addToCart('5')"> <i class="fas fa-cart-plus"></i> ADD TO CART</button>
       </div>
       <div class="product">
         <div class="wrapper">
-          <a routerLink="/products/1">  <img src="../../../assets/fruits/BANANA.jpg"></a>
+          <a routerLink="/products/6">  <img src="../../../assets/fruits/BANANA.jpg"></a>
         </div>
         <div class="sub-title">BANANA</div>
         <div class="price-box">
@@ -156,11 +156,11 @@
             1 kg
           </span>
         </div>
-        <button (click)="data.cartCount = data.cartCount + 1"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
+        <button (click)="data.addToCart('6')"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
       </div>
       <div class="product">
         <div class="wrapper">
-          <a routerLink="/products/1"> <img src="../../../assets/fruits/langra-mango.jpg"></a>
+          <a routerLink="/products/7"> <img src="../../../assets/fruits/langra-mango.jpg"></a>
         </div>
         <div class="sub-title">Langra Mango</div>
         <div class="price-box">
@@ -176,11 +176,11 @@
             1 kg
           </span>
         </div>
-        <button (click)="data.cartCount = data.cartCount + 1"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
+        <button (click)="data.addToCart('7')"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
       </div>
       <div class="product">
         <div class="wrapper">
-          <a routerLink="/products/1"> <img src="../../../assets/fruits/Pomegranate.jpg"></a>
+          <a routerLink="/products/8"> <img src="../../../assets/fruits/Pomegranate.jpg"></a>
         </div>
         <div class="sub-title">Pomegranate</div>
         <div class="price-box">
@@ -196,7 +196,7 @@
             1 kg
           </span>
         </div>
-        <button (click)="data.cartCount = data.cartCount + 1"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
+        <button (click)="data.addToCart('8')"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
       </div>
 
     </div>
@@ -217,8 +217,9 @@
     <div class="offers">
       <div class="product">
         <div class="wrapper">
-          <a routerLink="/products/3"><img src="../../../assets/Vegitables/TOMATO.jpg"></a>
+          <a routerLink="/products/9"><img src="../../../assets/Vegitables/TOMATO.jpg"></a>
         </div>
+        <div class="sub-title">Tomato</div>
         <div class="price-box">
           <p class="old-price">20 <i class="fas fa-rupee-sign"></i></p>
           <p class="new-price">13 <i class="fas fa-rupee-sign"></i></p>
@@ -232,12 +233,13 @@
             1 kg
           </span>
         </div>
-        <button (click)="data.cartCount = data.cartCount + 1"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
+        <button (click)="data.addToCart('9')"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
       </div>
       <div class="product">
         <div class="wrapper">
-          <img src="../../../assets/Vegitables/onion.jpg">
+          <a routerLink="/products/10">  <img src="../../../assets/Vegitables/onion.jpg"></a>
         </div>
+        <div class="sub-title">Onion</div>
         <div class="price-box">
           <p class="old-price">32 <i class="fas fa-rupee-sign"></i></p>
           <p class="new-price">28 <i class="fas fa-rupee-sign"></i></p>
@@ -251,12 +253,13 @@
             1 kg
           </span>
         </div>
-        <button (click)="data.cartCount = data.cartCount + 1"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
+        <button (click)="data.addToCart('10')"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
       </div>
       <div class="product">
         <div class="wrapper">
-          <a routerLink="/products/1"> <img src="../../../assets/Vegitables/potato.jpg"></a>
+          <a routerLink="/products/11"> <img src="../../../assets/Vegitables/potato.jpg"></a>
         </div>
+        <div class="sub-title">Potato</div>
         <div class="price-box">
           <p class="old-price">16 <i class="fas fa-rupee-sign"></i></p>
           <p class="new-price">8 <i class="fas fa-rupee-sign"></i></p>
@@ -270,7 +273,7 @@
             1 kg
           </span>
         </div>
-        <button (click)="data.cartCount = data.cartCount + 1"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
+        <button (click)="data.addToCart('11')"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
       </div>
     </div>
   </div>

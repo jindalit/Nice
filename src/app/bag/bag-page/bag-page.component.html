@@ -20,72 +20,31 @@
     </tr>
     </thead>
     <tbody>
-    <tr class="product-item">
+    <tr class="product-item" *ngFor="let product of data.bagProduct;let i = index">
       <td class="description">
         <div class="container">
           <div class="product-photo">
-            <img src="../../../assets/others/pulses.jpg">
+            <img [src]="product.picture">
           </div>
           <div>
-            <p class="product-name">Arhar Dal (Unpolished Pulses) 500gm</p>
+            <p class="product-name">{{product.title}}</p>
             <p class="availability">In stock | Usually dispatched within 24 hours </p>
           </div>
         </div>
       </td>
-      <td class="price "><i class="fas fa-rupee-sign"></i> 75</td>
+      <td class="price "><i class="fas fa-rupee-sign"></i> {{product.sale}}</td>
       <td class="quantity">
-        <ui-qt-input [ngModel]="1"></ui-qt-input>
+        <ui-qt-input [ngModel]="1" (click)="updateQuantity($event,product.sale)"></ui-qt-input>
       </td>
       
       <td class="remove">
-        x
-      </td>
-    </tr>
-    <tr class="product-item">
-      <td class="description">
-        <div class="container">
-          <div class="product-photo">
-            <img src="../../../assets/others/coconut.jpg">
-          </div>
-          <div>
-            <p class="product-name">Coconut Boards</p>
-            <p class="availability">In stock | Usually dispatched within 24 hours </p>
-          </div>
-        </div>
-      </td>
-      <td class="price"><i class="fas fa-rupee-sign"></i> 30</td>
-      <td class="quantity">
-        <ui-qt-input [ngModel]="2"></ui-qt-input>
-      </td>
-      <td class="remove">
-        x
-      </td>
-    </tr>
-    <tr class="product-item">
-      <td class="description">
-        <div class="container">
-          <div class="product-photo">
-            <img src="../../../assets/others/pulses/moong.jpg">
-          </div>
-          <div>
-            <p class="product-name">Tata Sampann Moong Dal Split, 1kg</p>
-            <p class="availability">In stock | Usually dispatched within 24 hours </p>
-          </div>
-        </div>
-      </td>
-      <td class="price"><i class="fas fa-rupee-sign"></i> 118</td>
-      <td class="quantity">
-        <ui-qt-input [ngModel]="1"></ui-qt-input>
-      </td>
-      <td class="remove">
-        x
-      </td>
+       <a (click)="removeItem(i)"> x </a></td>
     </tr>
     </tbody>
     <tfoot>
     <tr>
       <td class="total-label" colspan="3">Total:</td>
-      <td class="total-value"><i class="fas fa-rupee-sign"></i> 223</td>
+      <td class="total-value"><i class="fas fa-rupee-sign"></i> {{data.total}}</td>
       <td class="remaining"></td>
     </tr>
     </tfoot>

@@ -10,6 +10,7 @@ import { FooterModule } from './footer/footer.module';
 import { HeaderModule } from './header/header.module';
 import { SupportModule } from './support/support.module';
 import { UiModule } from './ui/ui.module';
+import { AlertComponent } from './ui/alert.component';
 @NgModule({
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -23,7 +24,7 @@ import { UiModule } from './ui/ui.module';
     SupportModule
   ],
   declarations: [
-    AppComponent,
+    AppComponent,AlertComponent
   ],
   providers: [
     DataService,

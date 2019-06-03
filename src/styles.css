@@ -39,3 +39,38 @@ body {
     font-size: 13px;
   }
 }
+/*Alert Messages*/
+.alert-wrapper{
+  width: 100%;
+  position: fixed;
+  top: -40px;
+  left: 0;
+  margin-left: 0;
+  text-align: center;
+  z-index: 99999;
+  transition: top ease 500ms;
+  -webkit-transition: top ease 500ms;
+  -moz-transition: top ease 500ms;
+  -o-transition: top ease 500ms;
+  -ms-transition: top ease 500ms;
+}
+.alert-wrapper .alertBox{
+  display: inline-block;
+  padding: 6px 15px;
+  min-width: initial;
+  box-shadow: 0 5px 10px 1px rgba(0,0,0,0.8);
+  -webkit-box-shadow: 0 5px 10px 1px rgba(0,0,0,0.8);
+  -o-box-shadow: 0 5px 10px 1px rgba(0,0,0,0.8);
+  -ms-box-shadow: 0 5px 10px 1px rgba(0,0,0,0.8);
+  -moz-box-shadow: 0 5px 10px 1px rgba(0,0,0,0.8);
+  margin: 0;
+  position: relative;
+  padding-right: 35px;
+}
+.alert-wrapper .alertBox a.hidemsg{
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  color: inherit;
+}
+/**/ 

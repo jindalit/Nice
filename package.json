@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 3000",
     "build:browser": "ng build --prod",
     "build:server": "npm run build:browser && npm run build:server:app && npm run build:server:bundle",
     "build:server:app": "ng run ui-nice:server",

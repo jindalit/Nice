@@ -4,15 +4,15 @@
       <h2 class="title">Please Enter Your Information</h2>
         <form>
           <label>Email address</label>
-          <input [uiInput] name="email" [(ngModel)]="inputModel">
+          <input [uiInput] name="email" [(ngModel)]="userEmail" autocomplete="off"> 
           <label>Password</label>
-          <input type="password" [uiInput] name="password" [(ngModel)]="inputModel">
+          <input type="password" [uiInput] name="password" [(ngModel)]="userPwd" autocomplete="off">
         </form>
         <div class="forgotten-password">
           <a href="javascript:void(0)">I forgot my password</a>
         </div>
         <div class="login-box">
-          <button class="login">LogIn</button>
+          <button class="login" (click)="login()">LogIn</button>
         </div>
     </div>
     <div class="login-panel">
