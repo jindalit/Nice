@@ -10,7 +10,7 @@ const routes: Routes = [
     component: ListPageComponent,
   },
   {
-    path: ':id',
+    path: ':category/:id',
     component: ViewPageComponent,
   },
   {

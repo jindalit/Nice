@@ -1,7 +1,7 @@
 <div class="main-wrapper">
   <div class="product-box">
     <div class="product-preview">
-      <ui-photo-carousel [photos]="product.photos"></ui-photo-carousel>
+      <ui-photo-carousel [photos]="photos"></ui-photo-carousel>
       <div>
         <h4>Description</h4>
         <p [innerHTML]="product.description"></p>
@@ -44,22 +44,22 @@
       </div>
       <div class="price-box">
         <div class="price">
-          <p>M.R.P. <span class="old-price"><i class="fas fa-rupee-sign"></i> {{ product.price }}</span></p>
-          <p>Price <span class="new-price">{{ product.sale }} <i class="fas fa-rupee-sign"></i></span></p>
+          <p>M.R.P. <span class="old-price"><i class="fas fa-rupee-sign"></i> {{ product.pricing.retail }}</span></p>
+          <p>Price <span class="new-price">{{ product.pricing.sale }} <i class="fas fa-rupee-sign"></i></span></p>
         </div>
         <div class="rating">
           <ui-rating [value]="3"></ui-rating>
         </div>
       </div>
       
-      <div class="size-box" *ngIf="product.id !='1'">
+      <div class="size-box" *ngIf="product.shipping.unit =='kg'">
         <p>Select quantity</p>
         <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'250'">250 gm</button>
         <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'500'">500 gm</button>
         <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'1kg'">1 kg</button>
         <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'5kg'">5 kg</button>
       </div>
-      <div class="size-box" *ngIf="product.id =='1'">
+      <div class="size-box" *ngIf="product.shipping.unit !='kg'">
         <p>Select quantity</p>
         <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'1pc'">1pc</button>
         <button [uiButton] [type]="'size'" [kitCheck] [(ngModel)]="size" [value]="'2pc'">2pc</button>

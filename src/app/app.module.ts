@@ -1,5 +1,6 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +12,14 @@ import { HeaderModule } from './header/header.module';
 import { SupportModule } from './support/support.module';
 import { UiModule } from './ui/ui.module';
 import { AlertComponent } from './ui/alert.component';
+import { Http, HttpModule } from '@angular/http';
+export function jwtOptionsFactory(tokenService) {
+  return {
+    tokenGetter: () => {
+      return localStorage.getItem('Postman-Token');
+    }
+  }
+}
 @NgModule({
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -21,16 +30,17 @@ import { AlertComponent } from './ui/alert.component';
     UiModule,
     HeaderModule,
     FooterModule,
-    SupportModule
+    SupportModule,
+    HttpModule
   ],
   declarations: [
-    AppComponent,AlertComponent
+    AppComponent, AlertComponent
   ],
   providers: [
-    DataService,
+    { provide: JWT_OPTIONS, useFactory: jwtOptionsFactory, deps: [Http] }, DataService,
   ],
   schemas: [
-    CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA
+    CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA
   ],
   bootstrap: [AppComponent],
 })
