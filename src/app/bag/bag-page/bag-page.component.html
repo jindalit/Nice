@@ -32,9 +32,9 @@
           </div>
         </div>
       </td>
-      <td class="price "><i class="fas fa-rupee-sign"></i> {{product.sale}}</td>
+      <td class="price "><i class="fas fa-rupee-sign"></i> {{product.price}}</td>
       <td class="quantity">
-        <ui-qt-input [ngModel]="1" (click)="updateQuantity($event,product.sale)"></ui-qt-input>
+        <ui-qt-input [ngModel]="product.quantity" (click)="updateQuantity($event,product.price)"></ui-qt-input>
       </td>
       
       <td class="remove">

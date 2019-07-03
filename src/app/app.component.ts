@@ -38,5 +38,9 @@ export class AppComponent {
         window.scrollTo(0, 0);
       }
     });
+    
+  }
+  ngOnInit() {
+      localStorage.setItem('Postman-Token','ed3ff088-13da-4c8d-b077-bb084fa1228c')
   }
 }

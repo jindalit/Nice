@@ -15,7 +15,7 @@ export class HomePageComponent implements OnInit {
      this.data.postData("/login",{"userName":"cm_nice","password":"cm_nice"}).subscribe(data => {
       let apiData = (data as any);
       const token = JSON.parse(apiData._body).id;
-      this.data.headers.set('Postman-Token',`Bearer ${token}`);
+      this.data.headers.set('Postman-Token',`Bearer ${token}`);      
       this.data.fetchData("/mp/products").subscribe(data => {
         let apiData = (data as any);
         this.data.allProducts = JSON.parse(apiData._body).data;
