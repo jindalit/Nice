@@ -12,6 +12,7 @@ export class DataService {
   baseLocalUrl: any = "http://localhost:8080";
   headers: any;
   requestOptions: any;
+  formData: FormData = new FormData();
   bagProduct: any = [];
   user: any;
   total: any = 0;
@@ -19,9 +20,9 @@ export class DataService {
   categories: any = [];
   constructor(private _http: Http) {
     this.headers = new Headers({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded'
     });
-    this.requestOptions = new RequestOptions({ headers: this.headers });
+    this.requestOptions = new RequestOptions({ headers: this.headers, body: this.formData });
   }
   products: any = {};
   addToCart(id) {
@@ -70,14 +71,15 @@ export class DataService {
     this.showAlertHandler.next(option);
   }
   fetchData(serviceName) {
-    const token = localStorage.getItem('Postman-Token');
-    this.headers.set('Postman-Token',` ${token}`);
-    return this._http.get(this.baseUrl + serviceName, {
+   // const token = localStorage.getItem('JSESSIONID');
+    this.headers.set('X-Requested-With', "Mobile");
+    return this._http.get(this.baseUrl + serviceName + "?token=" + localStorage.getItem("token"), {
       headers: this.headers
     });
   }
   postData(serviceName, params) {
-    return this._http.post(this.baseUrl + serviceName, params, this.requestOptions);
+    this.headers.set('X-Requested-With', "Mobile");
+    return this._http.post(this.baseUrl + serviceName+ "?token=" + localStorage.getItem("token"), params, this.requestOptions);
   }
 
 }

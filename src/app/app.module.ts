@@ -16,7 +16,7 @@ import { Http, HttpModule } from '@angular/http';
 export function jwtOptionsFactory(tokenService) {
   return {
     tokenGetter: () => {
-      return localStorage.getItem('Postman-Token');
+      return localStorage.getItem('JSESSIONID');
     }
   }
 }
