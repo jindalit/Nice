@@ -12,7 +12,7 @@ export class DataService {
   baseLocalUrl: any = "http://localhost:8080";
   headers: any;
   requestOptions: any;
-  formData: FormData = new FormData();
+  //formData: FormData = new FormData();
   bagProduct: any = [];
   user: any;
   total: any = 0;
@@ -20,9 +20,9 @@ export class DataService {
   categories: any = [];
   constructor(private _http: Http) {
     this.headers = new Headers({
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
     });
-    this.requestOptions = new RequestOptions({ headers: this.headers, body: this.formData });
+    this.requestOptions = new RequestOptions({ headers: this.headers });
   }
   products: any = {};
   addToCart(id) {
