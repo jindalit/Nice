@@ -1,6 +1,6 @@
-<a [routerLink]="['/products/', product.id]">
+<a routerLink="/products/{{product.categoryIds[0]}}/{{product.id}}">
 <div class="product-photo">
-  <img [src]="product.picture">
+  <img [src]="data.baseUrl + product.assets[0].path">
 </div>
 <div class="product-info">
   <div>
@@ -10,8 +10,8 @@
     
   </div>
   <div class="price-box">
-    <p class="old-price"><i class="fas fa-rupee-sign"></i> {{ product.price }}</p>
-    <p class="new-price"><i class="fas fa-rupee-sign"></i> {{ product.sale }}</p>
+    <p class="old-price"><i class="fas fa-rupee-sign"></i> {{ product.pricing.retail }}</p>
+    <p class="new-price"><i class="fas fa-rupee-sign"></i> {{ product.pricing.sale }}</p>
   </div>
 </div>
 </a>

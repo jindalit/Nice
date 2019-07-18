@@ -25,12 +25,12 @@ export class ViewPageComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.data.fetchData("/mp/products/1").subscribe(data => {
+      this.data.fetchData("/mp/products/"+params.id).subscribe(data => {
         let apiData = (data as any);
-        this.product = (JSON.parse(apiData._body).data[0] as any);
+        this.product = (JSON.parse(apiData._body).data as any);
         this.product.assets.map((item) => {
-          this.photos  = [{thumb:item.path,full:item.path,description:''}];
-          this.photos.push({thumb:item.path,full:item.path,description:''})
+          this.photos  = [];
+          this.photos.push({thumb:this.data.baseUrl + item.path,full:this.data.baseUrl + item.path,description:''})
         });
         this.data.productByCategory();
       });      

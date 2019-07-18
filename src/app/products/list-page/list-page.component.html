@@ -27,7 +27,7 @@
         </nav>
       </div>
       <div class="list-cards">
-        <div *ngFor="let product of products" class="card">
+        <div *ngFor="let product of data.allProducts" class="card">
           <app-card [product]="product"></app-card>
         </div>
       </div>

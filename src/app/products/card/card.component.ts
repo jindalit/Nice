@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../data/meta';
+import { DataService } from '../../data/data.service';
 
 @Component({
   selector: 'app-card',
@@ -8,4 +9,6 @@ import { Product } from '../../data/meta';
 })
 export class CardComponent {
   @Input() product: Product;
+  constructor(private data: DataService) {
+  }
 }

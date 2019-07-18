@@ -24,15 +24,7 @@ export class HomePageComponent implements OnInit {
       const token = JSON.parse(apiData.response).token;
       localStorage.setItem("token",token);      
      // thisInst.data.headers.set('X-Requested-With', "Mobile");
-      thisInst.data.fetchData("/mp/products").subscribe(data => {
-        let apiData = (data as any);
-        thisInst.data.allProducts = JSON.parse(apiData._body).data;
-        thisInst.data.fetchData("/mp/categories").subscribe(data => {
-          let apiData = (data as any);
-          thisInst.data.categories = JSON.parse(apiData._body).data;
-          thisInst.data.productByCategory();
-        });
-      });
+      thisInst.data.getAllProduct();
       //alert('Yeah! Data sent and response loaded.');
     });
 

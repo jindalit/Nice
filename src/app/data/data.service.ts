@@ -9,7 +9,6 @@ export class DataService {
   public cartCount: any = 0;
   jwtHelper: JwtHelperService = new JwtHelperService();
   baseUrl: any = "http://103.50.212.219:8090/CCKNIA";
-  baseLocalUrl: any = "http://localhost:8080";
   headers: any;
   requestOptions: any;
   //formData: FormData = new FormData();
@@ -29,10 +28,10 @@ export class DataService {
     if (!(event as any).target.classList.contains("disabled")) {
       this.postData('/mp/cart', { 'itemId': id, 'itemQuantity': "1" }).subscribe(data => {
         this.cartCount = this.cartCount + 1
-       // this.bagProduct.push(this.products.find(p => p.id === parseInt(id, 10)));
+        // this.bagProduct.push(this.products.find(p => p.id === parseInt(id, 10)));
         this.showAlert({
           type: "warning", msg: "Added to cart."
-        });        
+        });
       });
       (event as any).target.classList.add("disabled");
     }
@@ -71,7 +70,7 @@ export class DataService {
     this.showAlertHandler.next(option);
   }
   fetchData(serviceName) {
-   // const token = localStorage.getItem('JSESSIONID');
+    // const token = localStorage.getItem('JSESSIONID');
     this.headers.set('X-Requested-With', "Mobile");
     return this._http.get(this.baseUrl + serviceName + "?token=" + localStorage.getItem("token"), {
       headers: this.headers
@@ -79,7 +78,17 @@ export class DataService {
   }
   postData(serviceName, params) {
     this.headers.set('X-Requested-With', "Mobile");
-    return this._http.post(this.baseUrl + serviceName+ "?token=" + localStorage.getItem("token"), params, this.requestOptions);
+    return this._http.post(this.baseUrl + serviceName + "?token=" + localStorage.getItem("token"), params, this.requestOptions);
   }
-
+  getAllProduct() {
+    this.fetchData("/mp/products").subscribe(data => {
+      let apiData = (data as any);
+      this.allProducts = JSON.parse(apiData._body).data;
+      this.fetchData("/mp/categories").subscribe(data => {
+        let apiData = (data as any);
+        this.categories = JSON.parse(apiData._body).data;
+        this.productByCategory();
+      });
+    });
+  }
 }

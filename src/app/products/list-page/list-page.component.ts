@@ -14,6 +14,7 @@ export class ListPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.products = this.data.products;
+    this.data.getAllProduct();
+    
   }
 }

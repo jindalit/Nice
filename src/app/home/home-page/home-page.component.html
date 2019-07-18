@@ -28,7 +28,7 @@
     <div class="offers">
       <div class="product" *ngFor="let product of data.products[category.id]">
         <div class="wrapper">
-          <a routerLink="/products/{{category.id}}/{{product.id}}"><img [src]="product.assets[0].path"></a>
+          <a routerLink="/products/{{category.id}}/{{product.id}}"><img [src]="data.baseUrl + product.assets[0].path"></a>
         </div>
         <div class="sub-title">{{product.title}}</div>
         <div class="price-box">
