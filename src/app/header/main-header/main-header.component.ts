@@ -8,24 +8,21 @@ import { Router } from '@angular/router';
 })
 export class MainHeaderComponent implements OnInit {
   inputModel: any;
-  
+
   displayMenu = false;
 
   menuAnchor: any;
 
-  constructor(public el: ElementRef, private dataService:DataService, private router: Router) {
+  constructor(public el: ElementRef, private dataService: DataService, private router: Router) {
   }
 
   ngOnInit() {
     this.menuAnchor = this.el.nativeElement;
     this.dataService.user = localStorage.getItem("userObj") ? localStorage.getItem("userObj").toUpperCase() : "Sign In";
   }
-  logOut(){
-    localStorage.removeItem("userObj");
-    this.dataService.showAlert({
-      type: "success", msg: "Logout successfully"
-    });
-    window.location.reload();
-    
+  logOut() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    window.location.href = this.dataService.baseUrl;
   }
 }

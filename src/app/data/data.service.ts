@@ -13,7 +13,7 @@ export class DataService {
   requestOptions: any;
   //formData: FormData = new FormData();
   bagProduct: any = [];
-  user: any;
+  user: any = 'Sign In';
   total: any = 0;
   allProducts: any = [];
   categories: any = [];
@@ -25,8 +25,9 @@ export class DataService {
   }
   products: any = {};
   addToCart(id) {
+    let itemvariantid = id ? id : (event as any).target.previousElementSibling.getAttribute('itemvariantid')
     if (!(event as any).target.classList.contains("disabled")) {
-      this.postData('/mp/cart', { 'itemId': id, 'itemQuantity': "1" }).subscribe(data => {
+      this.postData('/mp/cart', { 'itemVariantId': itemvariantid, 'itemQuantity': "1" }).subscribe(data => {
         this.cartCount = this.cartCount + 1
         // this.bagProduct.push(this.products.find(p => p.id === parseInt(id, 10)));
         this.showAlert({
@@ -72,9 +73,11 @@ export class DataService {
   fetchData(serviceName) {
     // const token = localStorage.getItem('JSESSIONID');
     this.headers.set('X-Requested-With', "Mobile");
+    this.user = localStorage.getItem('username');
     return this._http.get(this.baseUrl + serviceName + "?token=" + localStorage.getItem("token"), {
       headers: this.headers
     });
+    
   }
   postData(serviceName, params) {
     this.headers.set('X-Requested-With', "Mobile");

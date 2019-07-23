@@ -22,7 +22,8 @@ export class HomePageComponent implements OnInit {
     XHR.addEventListener('load', function (event) {
       let apiData = (event.target as any);
       const token = JSON.parse(apiData.response).token;
-      localStorage.setItem("token",token);      
+      localStorage.setItem("token",token);
+      localStorage.setItem("username",JSON.parse(apiData.response).name);      
      // thisInst.data.headers.set('X-Requested-With', "Mobile");
       thisInst.data.getAllProduct();
       //alert('Yeah! Data sent and response loaded.');
@@ -37,21 +38,26 @@ export class HomePageComponent implements OnInit {
     XHR.open('POST', 'http://103.50.212.219:8090/CCKNIA/mlogin');
 
     // Send our FormData object; HTTP headers are set automatically
-    XHR.send(FD);/* 
-  
-     this.data.postData("/mlogin",this.data.formData).subscribe(data => {
-      let apiData = (data as any);
-      const token = JSON.parse(apiData._body).id;
-      this.data.headers.set('token', token);      
-      this.data.fetchData("/mp/products").subscribe(data => {
-        let apiData = (data as any);
-        this.data.allProducts = JSON.parse(apiData._body).data;
-        this.data.fetchData("/mp/categories").subscribe(data => {
-          let apiData = (data as any);
-          this.data.categories = JSON.parse(apiData._body).data;
-          this.data.productByCategory();
-        }); 
-      }); 
-    });   */
+    XHR.send(FD);
+  }
+  selectVariant(event,index){
+    let currentElm = event.target;
+    let parent = currentElm.parentElement.parentElement;
+    for(let i=0;i<parent.childNodes.length;i++){
+      //console.log(parent.childNodes[i])
+      if(parent.childNodes[i].tagName && parent.childNodes[i].classList.contains('current')){
+        parent.childNodes[i].classList.remove('current')
+        parent.childNodes[i].children[0].style.display = 'none'
+        parent.childNodes[i].children[1].classList.remove('badge-info')
+        parent.childNodes[i].children[1].classList.add('badge-primary')
+      }
+    }
+    currentElm.parentElement.classList.add('current')
+    for(let i=0;i<parent.childNodes.length;i++){
+      if(parent.childNodes[i].tagName && parent.childNodes[i].classList.contains('current')){
+        parent.childNodes[i].children[0].style.display = 'flex'
+        parent.childNodes[i].children[1].classList.add('badge-info')
+      }
+    }
   }
 }

@@ -10,12 +10,14 @@
         max-height: 350px;
     }
 
-    .quantity-box {
-        span {
-            padding: 10px 15px;
-            margin-right: 10px;
-        }
+
+    span.badge {
+        padding: 10px 15px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
     }
+
 }
 
 .hot-offers,
@@ -76,7 +78,7 @@
     .price-box {
         align-items: baseline;
         color: #3d4044;
-        display: flex;
+        display: none;
         flex-direction: row;
         justify-content: center;
         margin: 0;

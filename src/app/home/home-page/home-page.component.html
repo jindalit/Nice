@@ -28,23 +28,18 @@
     <div class="offers">
       <div class="product" *ngFor="let product of data.products[category.id]">
         <div class="wrapper">
-          <a routerLink="/products/{{category.id}}/{{product.id}}"><img [src]="data.baseUrl + product.assets[0].path"></a>
+          <a routerLink="/products/{{category.id}}/{{product.id}}"><img
+              [src]="data.baseUrl + product.assets[0].path"></a>
         </div>
         <div class="sub-title">{{product.title}}</div>
-        <div class="price-box">
-          <p class="old-price">{{product.pricing.retail}} <i class="fas fa-rupee-sign"></i></p>
-          <p class="new-price">{{product.pricing.sale}} <i class="fas fa-rupee-sign"></i></p>
-        </div>
-        <div class="quantity-box">
-          <span class="badge badge-primary">
-            1pc</span>
-          <span class="badge badge-info">
-            5 pc</span>
-          <span class="badge badge-primary">
-            10 pc
-          </span>
-        </div>
-        <button (click)="data.addToCart(product.id)"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
+        <span *ngFor="let variant of product.variants;let i=index;let selvar" [ngClass]="{'current':i == 0}" [attr.itemVariantId]="variant.id">
+          <div class="price-box" [ngStyle]="{'display' : i == 0 ? 'flex' : 'none'}">
+            <p class="old-price">{{variant.pricing.retail}} <i class="fas fa-rupee-sign"></i></p>
+            <p class="new-price">{{variant.pricing.sale}} <i class="fas fa-rupee-sign"></i></p>
+          </div>
+          <span class="badge badge-primary" [ngClass]="{'badge-info': i == 0}" (click)="selectVariant($event,i)">{{variant.shipping.weight}} {{variant.shipping.unit}}</span>
+        </span>
+        <button (click)="data.addToCart()"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
       </div>
 
     </div>

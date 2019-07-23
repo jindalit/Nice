@@ -5,43 +5,18 @@
       <ul class="main-menu">
         <li><a>All Products</a>
           <ul class="section">
-            <li>
-
+            <li *ngFor="let category of dataService.categories">
               <div class="title">
-                PRODUCTS
+                <a routerLink="/products">{{category.name}}</a>
               </div>
               <ul>
-                <li><a routerLink="/products/1">Coconut Board</a></li>
-                <li><a routerLink="/products">Rice</a></li>
-                <li><a routerLink="/products">Grains</a></li>
-                <li><a routerLink="/products">Pulses</a></li>
-              </ul>
-            </li>
-            <li>
-              <div class="title">
-                FRUITS
-              </div>
-              <ul>
-                <li><a routerLink="/products">Apple</a></li>
-                <li><a routerLink="/products">Mango</a></li>
-                <li><a routerLink="/products">Pomegranate</a></li>
-                <li><a routerLink="/products">Banana</a></li>
-              </ul>
-            </li>
-            <li>
-              <div class="title">
-                VEGETABLES
-              </div>
-              <ul>
-                <li><a routerLink="/products/1">Potato</a></li>
-                <li><a routerLink="/products">Tomamto</a></li>
-                <li><a routerLink="/products">Onion</a></li>
+                <li *ngFor="let product of dataService.products[category.id]"><a
+                    routerLink="/products/{{category.id}}/{{product.id}}">{{product.title}}</a></li>
               </ul>
             </li>
           </ul>
         </li>
       </ul>
-
     </div>
     <!-- <div class="search">
        <input type="text" placeholder="Search and add to shopping cart..." [(ngModel)]="inputModel"> 
@@ -59,7 +34,8 @@
           <a routerLink="/auth/sign-in">
             <i class="fas fa-user-circle"></i> Hello, {{dataService.user}}</a>
           <ul class="drop-down">
-            <li *ngIf="dataService.user == 'SME_NICE'"><a routerLink="products/1/upload">I want to sell my product</a></li>
+            <li *ngIf="dataService.user == 'SME_NICE'"><a routerLink="products/1/upload">I want to sell my product</a>
+            </li>
             <li>Change Password</li>
             <li (click)="logOut()">Logout</li>
           </ul>

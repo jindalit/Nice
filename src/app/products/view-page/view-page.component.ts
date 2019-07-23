@@ -10,7 +10,7 @@ import { Product } from '../../data/meta';
 })
 export class ViewPageComponent implements OnInit {
   color: any;
-
+  selectIndex:any=0;
   size: any;
 
   product: any = [];
@@ -32,10 +32,17 @@ export class ViewPageComponent implements OnInit {
           this.photos  = [];
           this.photos.push({thumb:this.data.baseUrl + item.path,full:this.data.baseUrl + item.path,description:''})
         });
+        //this.selectQty(0);
+        setTimeout(() =>{
+          (document.querySelector('.size-box button') as any).click()
+        },100)
         this.data.productByCategory();
       });      
      // this.recent = this.data.products.slice(0, 4);
     });
+  }
+  selectQty(index){
+    this.selectIndex = index;
   }
 }
 export interface ProductPhoto {
