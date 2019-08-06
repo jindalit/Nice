@@ -26,6 +26,7 @@
     .logo {
         font-size: 2rem;
         flex-shrink: 0;
+        cursor: pointer;
     }
 
     .main-wrapper {
@@ -180,7 +181,7 @@
         border-bottom: 1px ridge;
         margin: 0;
         padding: 0;
-
+        cursor: pointer;
         &:last-child {
             border-bottom: 0px;
         }

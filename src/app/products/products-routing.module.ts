@@ -14,7 +14,7 @@ const routes: Routes = [
     component: ViewPageComponent,
   },
   {
-    path: ':id/upload',
+    path: ':category/:id/upload',
     component: UploadComponent,
   },
 ];
