@@ -16,8 +16,8 @@ export class BagPageComponent implements OnInit {
       this.data.bagProduct = JSON.parse(apiData._body).data.items;
 
       this.data.bagProduct.map((item) => {
-        this.data.total = this.data.total + (parseInt(item.price) * item.quantity);
-        this.data.cartCount = this.data.cartCount + item.quantity;
+        this.data.total = this.data.total + (parseInt(item.itemPrice) * item.itemQuantity);
+        this.data.cartCount = this.data.cartCount + item.itemQuantity;
       });
     })
   }
@@ -26,7 +26,7 @@ export class BagPageComponent implements OnInit {
     this.data.bagProduct.splice(id, 1);
     this.data.total = 0;
     this.data.bagProduct.map((item) => {
-      this.data.total = this.data.total + (parseInt(item.price) * item.quantity);
+      this.data.total = this.data.total + (parseInt(item.itemPrice) * item.itemQuantity);
     });
   }
   updateQuantity(event, amount) {
