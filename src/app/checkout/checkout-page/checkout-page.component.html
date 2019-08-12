@@ -17,11 +17,7 @@
               <label class="required">Country</label>
             </div>
             <div class="container">
-              <select [uiSelect] [(ngModel)]="selectModel">
-                <option value="1">Ukraine</option>
-                <option value="2">Ukraine</option>
-                <option value="3">Ukraine</option>
-              </select>
+              <input type="text" [uiInput] [(ngModel)]="address.country">
             </div>
           </div>
           <div class="field">
@@ -29,7 +25,7 @@
               <label class="required">Full Name</label>
             </div>
             <div class="container">
-              <input type="text" [uiInput] [(ngModel)]="inputModel">
+              <input type="text" [uiInput] [(ngModel)]="address.name">
             </div>
           </div>
           <div class="field">
@@ -37,15 +33,7 @@
               <label class="required">Post Code/Zip</label>
             </div>
             <div class="container">
-              <input type="text" [uiInput] [(ngModel)]="inputModel">
-            </div>
-          </div>
-          <div class="field">
-            <div class="label-wrap">
-              <label>Company Name</label>
-            </div>
-            <div class="container">
-              <input type="text" [uiInput] [(ngModel)]="inputModel">
+              <input type="text" [uiInput] [(ngModel)]="address.pincode">
             </div>
           </div>
           <div class="field">
@@ -53,7 +41,7 @@
               <label class="required">House Name/Number</label>
             </div>
             <div class="container">
-              <input type="text" [uiInput] [(ngModel)]="inputModel">
+              <input type="text" [uiInput] [(ngModel)]="address.houseNo">
             </div>
           </div>
           <div class="field">
@@ -61,7 +49,7 @@
               <label class="required">Address 1</label>
             </div>
             <div class="container">
-              <input type="text" [uiInput] [(ngModel)]="inputModel">
+              <input type="text" [uiInput] [(ngModel)]="address.addressLine1">
             </div>
           </div>
           <div class="field">
@@ -69,7 +57,7 @@
               <label>Address 2</label>
             </div>
             <div class="container">
-              <input type="text" [uiInput] [(ngModel)]="inputModel">
+              <input type="text" [uiInput] [(ngModel)]="address.addressLine2">
             </div>
           </div>
           <div class="field">
@@ -77,7 +65,7 @@
               <label class="required">Town/City</label>
             </div>
             <div class="container">
-              <input type="text" [uiInput] [(ngModel)]="inputModel">
+              <input type="text" [uiInput] [(ngModel)]="address.city">
             </div>
           </div>
           <div class="field">
@@ -85,7 +73,7 @@
               <label>State</label>
             </div>
             <div class="container">
-              <input type="text" [uiInput] [(ngModel)]="inputModel">
+              <input type="text" [uiInput] [(ngModel)]="address.state">
             </div>
           </div>
           <div class="field">
@@ -93,7 +81,7 @@
               <label class="required">Contact Number</label>
             </div>
             <div class="container">
-              <input type="text" [uiInput] [(ngModel)]="inputModel">
+              <input type="text" [uiInput] [(ngModel)]="address.contactNumber">
             </div>
           </div>
         </fieldset>
@@ -180,7 +168,8 @@
         </fieldset>
       </section>
       <div class="submit-button">
-        <button class="shopping-btn" routerLink="../home">Continue Shopping</button> <button class="submit">Submit My Order</button>
+        <button class="shopping-btn" routerLink="../home">Continue Shopping</button> <button class="submit">Submit My
+          Order</button>
       </div>
     </div>
     <aside>
@@ -191,39 +180,39 @@
         <div class="basket">
           <table class="basket-table">
             <thead class="panel-head">
-            <tr>
-              <th class="description">
-                Items
-              </th>
-              <th class="price">
-                Price
-              </th>
-            </tr>
+              <tr>
+                <th class="description">
+                  Items
+                </th>
+                <th class="price">
+                  Price
+                </th>
+              </tr>
             </thead>
             <tbody>
-            <tr class="product-item" *ngFor="let product of data.bagProduct;let i = index">
-              <td class="description">
-                <div class="container">
-                  <div class="product-photo">
-                    <img [src]="product.picture">
+              <tr class="product-item" *ngFor="let product of data.bagProduct;let i = index">
+                <td class="description">
+                  <div class="container">
+                    <div class="product-photo">
+                      <img [src]="data.baseUrl + product.itemImagePath">
+                    </div>
+                    <div>
+                      <p class="product-name">{{product.itemTitle}}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p class="product-name">{{product.title}}</p>
-                  </div>
-                </div>
-              </td>
-              <td class="price"><i class="fas fa-rupee-sign"></i> {{product.sale}}</td>
-            </tr>
-            <tr class="product-item">
-              <td class="description">Delivery</td>
-              <td><i class="fas fa-rupee-sign"></i> 0.00</td>
-            </tr>
+                </td>
+                <td class="price"><i class="fas fa-rupee-sign"></i> {{product.itemPrice}}</td>
+              </tr>
+              <tr class="product-item">
+                <td class="description">Delivery</td>
+                <td><i class="fas fa-rupee-sign"></i> 0.00</td>
+              </tr>
             </tbody>
             <tfoot>
-            <tr>
-              <td>Order Total:</td>
-              <td><i class="fas fa-rupee-sign"></i> {{data.total}}</td>
-            </tr>
+              <tr>
+                <td>Order Total:</td>
+                <td><i class="fas fa-rupee-sign"></i> {{data.total}}</td>
+              </tr>
             </tfoot>
           </table>
         </div>
