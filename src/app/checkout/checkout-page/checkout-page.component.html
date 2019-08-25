@@ -9,7 +9,7 @@
       <section>
         <div class="header">
           <strong>1</strong>
-          <span>Delivery<br> Address</span>
+          <span>Shipping<br> Address</span>
         </div>
         <fieldset>
           <div class="field">
@@ -89,6 +89,84 @@
       <section>
         <div class="header">
           <strong>2</strong>
+          <span>Billing<br> Address</span>
+        </div>
+        <fieldset>
+          <div class="field">
+            <div class="label-wrap">
+              <label class="required">Country</label>
+            </div>
+            <div class="container">
+              <input type="text" [uiInput] [(ngModel)]="billingaddress.country">
+            </div>
+          </div>
+          <div class="field">
+            <div class="label-wrap">
+              <label class="required">Full Name</label>
+            </div>
+            <div class="container">
+              <input type="text" [uiInput] [(ngModel)]="billingaddress.name">
+            </div>
+          </div>
+          <div class="field">
+            <div class="label-wrap">
+              <label class="required">Post Code/Zip</label>
+            </div>
+            <div class="container">
+              <input type="text" [uiInput] [(ngModel)]="billingaddress.pincode">
+            </div>
+          </div>
+          <div class="field">
+            <div class="label-wrap">
+              <label class="required">House Name/Number</label>
+            </div>
+            <div class="container">
+              <input type="text" [uiInput] [(ngModel)]="billingaddress.houseNo">
+            </div>
+          </div>
+          <div class="field">
+            <div class="label-wrap">
+              <label class="required">Address 1</label>
+            </div>
+            <div class="container">
+              <input type="text" [uiInput] [(ngModel)]="billingaddress.addressLine1">
+            </div>
+          </div>
+          <div class="field">
+            <div class="label-wrap">
+              <label>Address 2</label>
+            </div>
+            <div class="container">
+              <input type="text" [uiInput] [(ngModel)]="billingaddress.addressLine2">
+            </div>
+          </div>
+          <div class="field">
+            <div class="label-wrap">
+              <label class="required">Town/City</label>
+            </div>
+            <div class="container">
+              <input type="text" [uiInput] [(ngModel)]="billingaddress.city">
+            </div>
+          </div>
+          <div class="field">
+            <div class="label-wrap">
+              <label>State</label>
+            </div>
+            <div class="container">
+              <input type="text" [uiInput] [(ngModel)]="billingaddress.state">
+            </div>
+          </div>
+          <div class="field">
+            <div class="label-wrap">
+              <label class="required">Contact Number</label>
+            </div>
+            <div class="container">
+              <input type="text" [uiInput] [(ngModel)]="billingaddress.contactNumber">
+            </div>
+          </div>
+        </fieldset>
+        <!-- <div class="header">
+          <strong>2</strong>
           <span>Select<br> Delivery<br> Option</span>
         </div>
         <fieldset>
@@ -108,7 +186,7 @@
               </label>
             </div>
           </div>
-        </fieldset>
+        </fieldset> -->
       </section>
       <section>
         <div class="header">
@@ -117,58 +195,18 @@
         </div>
         <fieldset>
           <div class="payment-option">
-            <div class="field radio">
-              <label>
-                <input type="radio" value="1" [uiInput] [(ngModel)]="radioModel">
-                Credit/Debit Card
-              </label>
-            </div>
+            
             <div class="field">
               <div class="label-wrap">
-                <label class="required">Card Number</label>
+                <label class="required">COD (Cash On Delivery)</label>
               </div>
-              <div class="container">
-                <input type="text" [uiInput] [(ngModel)]="inputModel">
-              </div>
-            </div>
-            <div class="field">
-              <div class="label-wrap">
-                <label class="required">Name on card</label>
-              </div>
-              <div class="container">
-                <input type="text" [uiInput] [(ngModel)]="inputModel">
-              </div>
-            </div>
-            <div class="field">
-              <div class="label-wrap">
-                <label class="required">Expiry Date</label>
-              </div>
-              <div class="container expiry-date">
-                <select class="month" [uiSelect] [(ngModel)]="selectModel">
-                  <option value="1">01</option>
-                  <option value="2">02</option>
-                  <option value="3">03</option>
-                </select>
-                <select class="year" [uiSelect] [(ngModel)]="selectModel">
-                  <option value="1">2017</option>
-                  <option value="2">2018</option>
-                  <option value="3">2019</option>
-                </select>
-              </div>
-            </div>
-            <div class="field">
-              <div class="label-wrap">
-                <label class="required">CV2</label>
-              </div>
-              <div class="container">
-                <input class="cv" type="text" [uiInput] [(ngModel)]="inputModel">
-              </div>
+
             </div>
           </div>
         </fieldset>
       </section>
       <div class="submit-button">
-        <button class="shopping-btn" routerLink="../home">Continue Shopping</button> <button class="submit">Submit My
+        <button class="shopping-btn" routerLink="../home">Continue Shopping</button> <button class="submit" (click)="confirmOrder()">Submit My
           Order</button>
       </div>
     </div>

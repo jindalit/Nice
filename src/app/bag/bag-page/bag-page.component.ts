@@ -11,6 +11,7 @@ export class BagPageComponent implements OnInit {
 
   ngOnInit() {
     this.data.total = 0;
+    this.data.cartCount = 0;
     this.data.fetchData('/mp/cart').subscribe(data => {
       let apiData = (data as any);
       this.data.bagProduct = JSON.parse(apiData._body).data.items;
@@ -20,6 +21,7 @@ export class BagPageComponent implements OnInit {
         this.data.cartCount = this.data.cartCount + item.itemQuantity;
       });
     })
+    
   }
   removeItem(id) {
     this.data.cartCount = this.data.cartCount - 1;

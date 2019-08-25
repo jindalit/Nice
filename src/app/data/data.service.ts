@@ -28,7 +28,8 @@ export class DataService {
     let itemvariantid = id ? id : (event as any).target.previousElementSibling.getAttribute('itemvariantid')
     if (!(event as any).target.classList.contains("disabled")) {
       this.postData('/mp/cart', { 'itemVariantId': itemvariantid, 'itemQuantity': 1 }).subscribe(data => {
-        this.cartCount = this.cartCount + 1
+        this.cartCount = this.cartCount + 1;
+        this.bagProduct.push(data);
         // this.bagProduct.push(this.products.find(p => p.id === parseInt(id, 10)));
         this.showAlert({
           type: "warning", msg: "Added to cart."

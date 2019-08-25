@@ -18,6 +18,7 @@ export class HomePageComponent implements OnInit {
 
     FD.append('userName', 'cm_nice');
     FD.append('password', 'cm_nice');
+    localStorage.setItem("user",'cm_nice');
     // Define what happens on successful data submission
     XHR.addEventListener('load', function (event) {
       let apiData = (event.target as any);

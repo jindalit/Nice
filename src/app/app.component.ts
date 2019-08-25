@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { KitIconsRegistryService, KitPlatformService } from '@ngx-kit/core';
-
+import { DataService } from './data/data.service'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +10,7 @@ import { KitIconsRegistryService, KitPlatformService } from '@ngx-kit/core';
 export class AppComponent {
   constructor(private icons: KitIconsRegistryService,
               private router: Router,
-              private platform: KitPlatformService) {
+              private platform: KitPlatformService, private data: DataService) {
     this.icons.add([
       {
         name: 'star',
@@ -41,6 +41,16 @@ export class AppComponent {
     
   }
   ngOnInit() {
+    this.data.total = 0;
+    this.data.fetchData('/mp/cart').subscribe(data => {
+      let apiData = (data as any);
+      this.data.bagProduct = JSON.parse(apiData._body).data.items;
+
+      this.data.bagProduct.map((item) => {
+        this.data.total = this.data.total + (parseInt(item.itemPrice) * item.itemQuantity);
+        this.data.cartCount = this.data.cartCount + item.itemQuantity;
+      });
+    })
      // localStorage.setItem('Postman-Token','ed3ff088-13da-4c8d-b077-bb084fa1228c')
   }
 }
